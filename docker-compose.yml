@@ -18,6 +18,7 @@ services:
             - ./app:/var/www
         links:
             - database
+            - cache
     socket:
         build:
             context: ./socket
@@ -33,3 +34,7 @@ services:
             - "MYSQL_DATABASE=app"
         ports:
             - "33061:3306"
+    cache:
+        image: redis:3.0
+        ports:
+            - "63791:6379"
