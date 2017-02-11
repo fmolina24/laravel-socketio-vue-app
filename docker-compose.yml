@@ -1,0 +1,26 @@
+version: '2'
+services:
+    nginx:
+        build:
+            context: ./nginx
+            dockerfile: Dockerfile
+        volumes:
+            - ./nginx:/var/www
+        ports:
+            - "8080:80"
+        links:
+            - app
+    app:
+        build:
+            context: ./app
+            dockerfile: Dockerfile
+        volumes:
+            - ./app:/var/www
+    socket:
+        build:
+            context: ./socket
+            dockerfile: Dockerfile
+        volumes:
+            - ./socket:/usr/src/app
+        ports:
+            - "3000:3000"
