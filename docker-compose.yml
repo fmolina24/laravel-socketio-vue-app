@@ -16,6 +16,8 @@ services:
             dockerfile: Dockerfile
         volumes:
             - ./app:/var/www
+        links:
+            - database
     socket:
         build:
             context: ./socket
@@ -24,3 +26,10 @@ services:
             - ./socket:/usr/src/app
         ports:
             - "3000:3000"
+    database:
+        image: mysql:5.7
+        environment:
+            - "MYSQL_ROOT_PASSWORD=secret"
+            - "MYSQL_DATABASE=app"
+        ports:
+            - "33061:3306"
