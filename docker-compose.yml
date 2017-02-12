@@ -3,9 +3,10 @@ services:
     nginx:
         build:
             context: ./nginx
-            dockerfile: Dockerfile
+            dockerfile: nginx.dev.docker
         volumes:
-            - ./nginx:/var/www
+            - ./app:/var/www
+            - /var/www/node_modules
         ports:
             - "8080:80"
         links:
@@ -13,16 +14,24 @@ services:
     app:
         build:
             context: ./app
-            dockerfile: Dockerfile
+            dockerfile: app.dev.docker
         volumes:
             - ./app:/var/www
         links:
             - database
             - cache
+    webpack:
+        build:
+            context: ./app
+            dockerfile: webpack.dev.docker
+        volumes:
+            - ./app:/var/www
+            - /var/www/node_modules
+        command: npm run watch
     socket:
         build:
             context: ./socket
-            dockerfile: Dockerfile
+            dockerfile: socket.dev.docker
         volumes:
             - ./socket:/usr/src/app
         ports:

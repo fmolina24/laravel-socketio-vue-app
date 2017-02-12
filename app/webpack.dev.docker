@@ -1,0 +1,14 @@
+FROM ubuntu:latest
+WORKDIR /var/www
+# Update
+RUN apt-get update
+# Install Curl
+RUN apt-get install curl -y
+# Install Node
+RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - && apt-get install nodejs -y
+# Install Webpack & Yarn
+RUN npm install webpack -g
+RUN npm install -g yarn
+# Install Dependensies
+COPY package.json /var/www/package.json
+RUN yarn install
