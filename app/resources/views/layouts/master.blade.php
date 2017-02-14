@@ -9,7 +9,7 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="{{url('css/app.css')}}">
+    <link rel="stylesheet" href="{{mix('css/app.css')}}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @yield('head')
 </head>
@@ -26,6 +26,7 @@
     };
 </script>
 @yield('footer')
-<script src="{{url('js/app.js')}}"></script>
+<script src="//localhost:3002/socket.io/socket.io.js"></script>
+<script src="{{mix('js/app.js')}}"></script>
 </body>
 </html>

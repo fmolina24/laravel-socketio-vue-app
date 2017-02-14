@@ -2564,6 +2564,10 @@ klaw@^1.0.0:
   optionalDependencies:
     graceful-fs "^4.1.9"
 
+laravel-echo@^1.2.4:
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/laravel-echo/-/laravel-echo-1.2.4.tgz#6f7d658af51d382abb226aa2cf3e89a981a022d4"
+
 laravel-mix@^0.7.2:
   version "0.7.5"
   resolved "https://registry.yarnpkg.com/laravel-mix/-/laravel-mix-0.7.5.tgz#d294b7b2fb88a18d8082860282ff41c8e7ae322d"

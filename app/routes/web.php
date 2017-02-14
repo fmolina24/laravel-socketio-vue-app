@@ -12,9 +12,6 @@
 */
 
 Route::get('/', function () {
+    event(new App\Events\EventName("welcome page visited"));
     return view('pages.welcome');
-});
-
-Route::get('chat',function (){
-    return view('pages.chat');
 });
