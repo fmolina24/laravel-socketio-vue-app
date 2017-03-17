@@ -14,3 +14,4 @@ Homestead.yaml
 !/public/js/.gitkeep
 /public/fonts/*
 !/public/fonts/.gitkeep
+/public/mix-manifest.json

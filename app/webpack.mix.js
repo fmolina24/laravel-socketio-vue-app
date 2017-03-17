@@ -15,6 +15,10 @@ let LiveReloadPlugin = require('webpack-livereload-plugin');
 mix.js('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css');
 
+mix.extract(['vue','axios','bootstrap-sass','lodash','materialize-css']);
+
+mix.version();
+
 mix.webpackConfig({
   plugins: [
     new LiveReloadPlugin()

@@ -27,6 +27,8 @@
 </script>
 @yield('footer')
 <script src="//localhost:3002/socket.io/socket.io.js"></script>
+<script src="{{mix('js/manifest.js')}}"></script>
+<script src="{{mix('js/vendor.js')}}"></script>
 <script src="{{mix('js/app.js')}}"></script>
 @if(config('app.env') == 'local')
     <script src="http://localhost:35729/livereload.js"></script>
