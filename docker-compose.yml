@@ -29,8 +29,7 @@ services:
             - /var/www/node_modules
         command: npm run watch
         ports:
-            - "3001:3001"
-            - "3000:3000"
+            - "35729:35729"
     socket:
         build:
             context: ./socket
